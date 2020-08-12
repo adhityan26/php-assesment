@@ -1,0 +1,38 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Assessment",
+        "description": "Evermos assessment test",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "adhityanugraha.jtk@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "version"
+                ],
+                "summary": "Version",
+                "description": "View this application version.",
+                "responses": {
+                    "default": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "version",
+            "description": "Get app version"
+        }
+    ]
+}

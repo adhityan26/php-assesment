@@ -14,3 +14,10 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['prefix' => 'soldier', 'namespace' => 'Soldier'], function () use ($router) {
+    $router->post('/initMagazine', 'SoldierController@initMagazine');
+    $router->get('/getMagazine', 'SoldierController@getMagazine');
+    $router->put('/putAmmo', 'SoldierController@putAmmo');
+    $router->get('/getVerified', 'SoldierController@getVerified');
+});
