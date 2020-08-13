@@ -29,6 +29,10 @@
  *     name="soldier",
  *     description="Soldier go to war"
  * )
+ * @OA\Tag(
+ *     name="shop",
+ *     description="Mom's Kitara Shop"
+ * )
  */
 
 namespace App\Http\Controllers;

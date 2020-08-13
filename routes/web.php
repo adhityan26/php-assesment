@@ -22,3 +22,10 @@ $router->group(['prefix' => 'soldier', 'namespace' => 'Soldier'], function () us
     $router->put('/putAmmo', 'MagazineController@putAmmo');
     $router->delete('/clearMagazine', 'MagazineController@clearMagazine');
 });
+
+$router->group(['prefix' => 'shop', 'namespace' => 'Shop'], function () use ($router) {
+    $router->get('/', 'ProductController@index');
+    $router->post('/addProduct', 'ProductController@addProduct');
+    $router->put('/reduceQty', 'ProductController@reduceQty');
+    $router->delete('/clearProduct', 'ProductController@clearProduct');
+});

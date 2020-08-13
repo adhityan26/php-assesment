@@ -28,6 +28,127 @@
                 }
             }
         },
+        "/shop": {
+            "get": {
+                "tags": [
+                    "shop"
+                ],
+                "summary": "Product",
+                "description": "Display Kitara shop products.",
+                "operationId": "App\\Http\\Controllers\\Shop\\ProductController::index",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/shop/addProduct": {
+            "post": {
+                "tags": [
+                    "shop"
+                ],
+                "summary": "Product",
+                "description": "Display Kitara shop products.",
+                "operationId": "App\\Http\\Controllers\\Shop\\ProductController::addProduct",
+                "requestBody": {
+                    "description": "create new product for Kitara shop",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "description": "Create new product",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "sku": {
+                                        "description": "Create new product",
+                                        "type": "string",
+                                        "example": "SKU00001"
+                                    },
+                                    "name": {
+                                        "description": "Create new product",
+                                        "type": "string",
+                                        "example": "Product A"
+                                    },
+                                    "price": {
+                                        "description": "Create new product",
+                                        "type": "decimal",
+                                        "example": 100000
+                                    },
+                                    "qty": {
+                                        "description": "Create new product",
+                                        "type": "integer",
+                                        "example": 100
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/soldier/clearProduct": {
+            "delete": {
+                "tags": [
+                    "shop"
+                ],
+                "summary": "Clear Products",
+                "description": "Remove all product from Kitara Shop.",
+                "operationId": "App\\Http\\Controllers\\Shop\\ProductController::clearProduct",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/shop/reduceQty": {
+            "put": {
+                "tags": [
+                    "shop"
+                ],
+                "summary": "Reduce Product Quantity",
+                "description": "Someone bought a product from Kitara Shop.",
+                "operationId": "App\\Http\\Controllers\\Shop\\ProductController::reduceQty",
+                "requestBody": {
+                    "description": "create new product for Kitara shop",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "id": {
+                                        "description": "Reduce product quantity",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "qty": {
+                                        "description": "Reduce product quantity",
+                                        "type": "integer",
+                                        "example": 5
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
         "/soldier": {
             "get": {
                 "tags": [
@@ -135,6 +256,10 @@
         {
             "name": "soldier",
             "description": "Soldier go to war"
+        },
+        {
+            "name": "shop",
+            "description": "Mom's Kitara Shop"
         }
     ]
 }
