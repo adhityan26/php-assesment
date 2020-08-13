@@ -25,13 +25,16 @@
  *     name="version",
  *     description="Get app version"
  * )
+ * @OA\Tag(
+ *     name="soldier",
+ *     description="Soldier go to war"
+ * )
  */
 
 namespace App\Http\Controllers;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
 
-class Controller extends BaseController
-{
+class Controller extends BaseController {
     //
 }

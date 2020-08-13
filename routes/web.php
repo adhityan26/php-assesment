@@ -16,8 +16,9 @@ $router->get('/', function () use ($router) {
 });
 
 $router->group(['prefix' => 'soldier', 'namespace' => 'Soldier'], function () use ($router) {
-    $router->post('/initMagazine', 'SoldierController@initMagazine');
-    $router->get('/getMagazine', 'SoldierController@getMagazine');
-    $router->put('/putAmmo', 'SoldierController@putAmmo');
-    $router->get('/getVerified', 'SoldierController@getVerified');
+    $router->get('/', 'MagazineController@index');
+    $router->get('/testMagazine', 'MagazineController@testMagazine');
+    $router->post('/initMagazine', 'MagazineController@initMagazine');
+    $router->put('/putAmmo', 'MagazineController@putAmmo');
+    $router->delete('/clearMagazine', 'MagazineController@clearMagazine');
 });

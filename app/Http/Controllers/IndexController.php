@@ -10,7 +10,7 @@ namespace App\Http\Controllers;
  *     description="View this application version.",
  *     @OA\Response(
  *         response="default",
- *         description="successful operation"
+ *         description="200"
  *     )
  * )
  */
@@ -21,10 +21,5 @@ class IndexController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        //
-    }
-
-    //
+    public function __construct() {}
 }

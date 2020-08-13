@@ -23,6 +23,104 @@
                 "description": "View this application version.",
                 "responses": {
                     "default": {
+                        "description": "200"
+                    }
+                }
+            }
+        },
+        "/soldier": {
+            "get": {
+                "tags": [
+                    "soldier"
+                ],
+                "summary": "Magazine",
+                "description": "Soldier view magazine the magazine he is carrying.",
+                "operationId": "App\\Http\\Controllers\\Soldier\\MagazineController::index",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/soldier/initMagazine": {
+            "post": {
+                "tags": [
+                    "soldier"
+                ],
+                "summary": "Magazine Initialization",
+                "description": "Initialize magazazine that the soldier carry to the war.",
+                "operationId": "App\\Http\\Controllers\\Soldier\\MagazineController::initMagazine",
+                "requestBody": {
+                    "description": "initialize value for the magazine",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "magazineNumber": {
+                                        "description": "Soldier carry the magazine into the war",
+                                        "type": "integer",
+                                        "example": 5
+                                    },
+                                    "magazineSize": {
+                                        "description": "Soldier carry the magazine into the war",
+                                        "type": "integer",
+                                        "example": 10
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/soldier/putAmmo": {
+            "put": {
+                "tags": [
+                    "soldier"
+                ],
+                "summary": "Put Ammo",
+                "description": "Soldier putting ammo into a magazone randomly.",
+                "operationId": "App\\Http\\Controllers\\Soldier\\MagazineController::putAmmo",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/soldier/clearMagazine": {
+            "delete": {
+                "tags": [
+                    "soldier"
+                ],
+                "summary": "Clear Magazine",
+                "description": "Soldier removing ammo from all of the magazine.",
+                "operationId": "App\\Http\\Controllers\\Soldier\\MagazineController::clearMagazine",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/soldier/testMagazine": {
+            "get": {
+                "tags": [
+                    "soldier"
+                ],
+                "summary": "Test Magazine",
+                "description": "Soldier test the verified magazine.",
+                "operationId": "App\\Http\\Controllers\\Soldier\\MagazineController::testMagazine",
+                "responses": {
+                    "200": {
                         "description": "successful operation"
                     }
                 }
@@ -33,6 +131,10 @@
         {
             "name": "version",
             "description": "Get app version"
+        },
+        {
+            "name": "soldier",
+            "description": "Soldier go to war"
         }
     ]
 }
