@@ -1,3 +1,16 @@
+<?php
+function get_asset($asset) {
+    return toSSL(swagger_lume_asset($asset));
+}
+
+function toSSL($path) {
+    if (env('APP_ENV') === 'production') {
+        return str_replace("http://", "https://", $path);
+    }
+    return $path;
+}
+?>
+
 <!-- HTML for static distribution bundle build -->
 <!DOCTYPE html>
 <html lang="en">
@@ -5,9 +18,9 @@
     <meta charset="UTF-8">
     <title>{{config('swagger-lume.api.title')}}</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{ swagger_lume_asset('swagger-ui.css') }}" >
-    <link rel="icon" type="image/png" href="{{ swagger_lume_asset('favicon-32x32.png') }}" sizes="32x32" />
-    <link rel="icon" type="image/png" href="{{ swagger_lume_asset('favicon-16x16.png') }}" sizes="16x16" />
+    <link rel="stylesheet" type="text/css" href="{{ get_asset('swagger-ui.css') }}" >
+    <link rel="icon" type="image/png" href="{{ get_asset('favicon-32x32.png') }}" sizes="32x32" />
+    <link rel="icon" type="image/png" href="{{ get_asset('favicon-16x16.png') }}" sizes="16x16" />
     <style>
         html
         {
@@ -67,15 +80,15 @@
 
 <div id="swagger-ui"></div>
 
-<script src="{{ swagger_lume_asset('swagger-ui-bundle.js') }}"> </script>
-<script src="{{ swagger_lume_asset('swagger-ui-standalone-preset.js') }}"> </script>
+<script src="{{ get_asset('swagger-ui-bundle.js') }}"> </script>
+<script src="{{ get_asset('swagger-ui-standalone-preset.js') }}"> </script>
 <script>
     window.onload = function() {
         // Build a system
         const ui = SwaggerUIBundle({
             dom_id: '#swagger-ui',
 
-            url: "{!! $urlToDocs !!}",
+            url: "{!! toSSL($urlToDocs) !!}",
             operationsSorter: {!! isset($operationsSorter) ? '"' . $operationsSorter . '"' : 'null' !!},
             configUrl: {!! isset($additionalConfigUrl) ? '"' . $additionalConfigUrl . '"' : 'null' !!},
             validatorUrl: {!! isset($validatorUrl) ? '"' . $validatorUrl . '"' : 'null' !!},
