@@ -14,6 +14,122 @@
         "version": "1.0.0"
     },
     "paths": {
+        "/game/key": {
+            "post": {
+                "tags": [
+                    "game"
+                ],
+                "summary": "Hide and seek",
+                "description": "Joni felling excited to find his key.",
+                "operationId": "App\\Http\\Controllers\\Game\\KeyController::findingKey",
+                "requestBody": {
+                    "description": "Joni's house and his starting point",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "maps": {
+                                        "description": "Create new product",
+                                        "type": "array",
+                                        "items": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "example": [
+                                            [
+                                                "#",
+                                                "#",
+                                                "#",
+                                                "#",
+                                                "#",
+                                                "#",
+                                                "#",
+                                                "#"
+                                            ],
+                                            [
+                                                "#",
+                                                ".",
+                                                ".",
+                                                ".",
+                                                ".",
+                                                ".",
+                                                ".",
+                                                "#"
+                                            ],
+                                            [
+                                                "#",
+                                                ".",
+                                                "#",
+                                                "#",
+                                                "#",
+                                                ".",
+                                                ".",
+                                                "#"
+                                            ],
+                                            [
+                                                "#",
+                                                ".",
+                                                ".",
+                                                ".",
+                                                "#",
+                                                ".",
+                                                "#",
+                                                "#"
+                                            ],
+                                            [
+                                                "#",
+                                                ".",
+                                                "#",
+                                                ".",
+                                                ".",
+                                                ".",
+                                                ".",
+                                                "#"
+                                            ],
+                                            [
+                                                "#",
+                                                "#",
+                                                "#",
+                                                "#",
+                                                "#",
+                                                "#",
+                                                "#",
+                                                "#"
+                                            ]
+                                        ]
+                                    },
+                                    "startPoint": {
+                                        "description": "Create new product",
+                                        "properties": {
+                                            "x": {
+                                                "description": "Create new product",
+                                                "type": "integer",
+                                                "example": "1"
+                                            },
+                                            "y": {
+                                                "description": "Create new product",
+                                                "type": "integer",
+                                                "example": "4"
+                                            }
+                                        },
+                                        "type": "object"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
         "/": {
             "get": {
                 "tags": [
@@ -260,6 +376,10 @@
         {
             "name": "shop",
             "description": "Mom's Kitara Shop"
+        },
+        {
+            "name": "game",
+            "description": "Andi want to play"
         }
     ]
 }

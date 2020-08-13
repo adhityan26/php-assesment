@@ -103,7 +103,7 @@ function toSSL($path) {
                 SwaggerUIBundle.plugins.DownloadUrl
             ],
 
-            layout: "StandaloneLayout"
+            layout: "BaseLayout"
         })
 
         window.ui = ui

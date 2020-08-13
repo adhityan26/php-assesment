@@ -12,6 +12,7 @@
 */
 
 $router->get('/', function () use ($router) {
+//    phpinfo();
     return $router->app->version();
 });
 
@@ -28,4 +29,8 @@ $router->group(['prefix' => 'shop', 'namespace' => 'Shop'], function () use ($ro
     $router->post('/addProduct', 'ProductController@addProduct');
     $router->put('/reduceQty', 'ProductController@reduceQty');
     $router->delete('/clearProduct', 'ProductController@clearProduct');
+});
+
+$router->group(['prefix' => 'game', 'namespace' => 'Game'], function () use ($router) {
+    $router->post('/key', 'KeyController@findingKey');
 });

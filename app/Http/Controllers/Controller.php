@@ -33,6 +33,10 @@
  *     name="shop",
  *     description="Mom's Kitara Shop"
  * )
+ * @OA\Tag(
+ *     name="game",
+ *     description="Andi want to play"
+ * )
  */
 
 namespace App\Http\Controllers;
