@@ -6,9 +6,20 @@ use App\Model\Shop\Product;
 use Exception;
 use Illuminate\Support\Facades\Cache;
 
+/**
+ * Class ProductRepository
+ * @package App\Repository\Shop
+ */
 class ProductRepository {
-    public $products;
 
+    /**
+     * @var array|mixed
+     */
+    public array $products;
+
+    /**
+     * ProductRepository constructor.
+     */
     function __construct() {
         $this->products = Cache::get('products');
     }

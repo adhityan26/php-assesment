@@ -9,6 +9,10 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Exception;
 
+/**
+ * Class ProductController
+ * @package App\Http\Controllers\Shop
+ */
 class ProductController extends Controller {
 
     /**

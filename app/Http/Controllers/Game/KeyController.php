@@ -7,6 +7,10 @@ use App\Model\Game\Ground;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
+/**
+ * Class KeyController
+ * @package App\Http\Controllers\Game
+ */
 class KeyController extends Controller {
 
     /**

@@ -4,7 +4,7 @@ namespace App\Model\Soldier;
 
 /**
  * Class Magazine
- *
+ * @package App\Model\Soldier
  */
 class Magazine {
     /**

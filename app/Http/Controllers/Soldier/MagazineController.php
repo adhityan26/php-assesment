@@ -8,6 +8,10 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Exception;
 
+/**
+ * Class MagazineController
+ * @package App\Http\Controllers\Soldier
+ */
 class MagazineController extends Controller
 {
     /**

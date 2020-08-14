@@ -6,8 +6,16 @@ use App\Model\Soldier\Magazine;
 use Illuminate\Support\Facades\Cache;
 use Exception;
 
+/**
+ * Class MagazineRepository
+ * @package App\Repository\Soldier
+ */
 class MagazineRepository {
-    public $magazines;
+
+    /**
+     * @var array|mixed
+     */
+    public array $magazines;
 
     function __construct() {
         $this->magazines = Cache::get('magazines');

@@ -2,6 +2,10 @@
 
 namespace App\Model\Game;
 
+/**
+ * Class Ground
+ * @package App\Model\Game
+ */
 class Ground {
 
     /**
