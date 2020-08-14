@@ -12,7 +12,7 @@ Execute command:
 
     composer build
 
-wait until it's done
+wait until it's done.
 
 ### Run
 
@@ -20,7 +20,9 @@ Execute command:
 
     php -S localhost:8000 -t public
     
-Running application can be found on https://php-assessment-ant.herokuapp.com/
+The application can be access in http://localhost:8000 after it started.
+    
+Live running application deployed on heroku and can be found on https://php-assessment-ant.herokuapp.com/.
 
 ## Api Path
 
@@ -28,6 +30,4 @@ Running application can be found on https://php-assessment-ant.herokuapp.com/
 * shop
 * game
 
-Detail of the endpoint is on the api documentation online https://php-assessment-ant.herokuapp.com/api/documentation
-
- 
+Detail of the endpoint is on the api documentation online https://php-assessment-ant.herokuapp.com/api/documentation.
