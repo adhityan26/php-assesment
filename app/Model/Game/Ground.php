@@ -26,13 +26,12 @@ class Ground {
     /**
      * Coordinate constructor.
      *
-     * @param int $x
-     * @param int $y
+     * @param Coordinate $startPosition
      * @param array $map
      */
-    public function __construct(int $x, int $y, array $map)
+    public function __construct(Coordinate $startPosition, array $map)
     {
-        $this->coordinate = new Coordinate($x, $y);
+        $this->coordinate = $startPosition;
         $this->map = $map;
         $this->possibleKeyLocation = [];
     }
@@ -45,13 +44,13 @@ class Ground {
      * @param array $history
      * @return bool
      */
-    public function forward(string $direction, bool $possibility, array &$history) {
+    public function possibleLocation(string $direction, bool $possibility, array &$history) {
         if ($direction === 'n') {
             $canMoveEast = false;
             $canMoveNorth = true;
             if ($this->moveNorth()) {
                 $history['n'] = new Coordinate($this->coordinate->x, $this->coordinate->y);
-                $canMoveEast = $this->forward('e', $possibility, $history);
+                $canMoveEast = $this->possibleLocation('e', $possibility, $history);
             } else {
                 $canMoveNorth = false;
             }
@@ -60,14 +59,14 @@ class Ground {
                 return true;
             }
 
-            $this->forward('n', $possibility, $history);
+            $this->possibleLocation('n', $possibility, $history);
         } else {
             if ($direction === 'e') {
                 $canMoveSouth = false;
                 $canMoveEast = true;
                 if ($this->moveEast()) {
                     $history['e'] = new Coordinate($this->coordinate->x, $this->coordinate->y);
-                    $canMoveSouth = $this->forward('s', $possibility, $history);
+                    $canMoveSouth = $this->possibleLocation('s', $possibility, $history);
                 } else {
                     $canMoveEast = false;
                 }
@@ -82,14 +81,14 @@ class Ground {
                     return false;
                 }
 
-                $this->forward('e', $possibility, $history);
+                $this->possibleLocation('e', $possibility, $history);
             } else {
                 if ($direction === 's') {
                     if ($this->moveSouth()) {
-                        return $this->forward('s', true, $history);
+                        $this->possibleKeyLocation[] = new Coordinate($this->coordinate->x, $this->coordinate->y);
+                        return $this->possibleLocation('s', true, $history);
                     } else {
                         if ($possibility) {
-                            $this->possibleKeyLocation[] = new Coordinate($this->coordinate->x, $this->coordinate->y);
                             return true;
                         } else {
                             return false;
