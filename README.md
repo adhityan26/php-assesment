@@ -27,6 +27,7 @@ Live running application deployed on heroku and can be found on https://php-asse
 ## Api Path
 
 Detail of the endpoint is on the api documentation online https://php-assessment-ant.herokuapp.com/api/documentation.
+Accessing the public api will take sometime to load (about 20 second), because the server is shutdown and need to be started again.
 
 ### soldier
 

@@ -18,7 +18,7 @@ class MagazineRepository {
     public array $magazines;
 
     function __construct() {
-        $this->magazines = Cache::get('magazines');
+        $this->magazines = Cache::get('magazines') ?? [];
     }
 
     /**
@@ -81,7 +81,7 @@ class MagazineRepository {
      * @throws Exception
      */
     public function verifiedMagazine(bool $ignoreError = false) {
-        $magazines = Cache::get('magazines');
+        $magazines = Cache::get('magazines') ?? [];
 
         $verifiedIndex = array_search(true, array_column($magazines, 'is_verified'));
 

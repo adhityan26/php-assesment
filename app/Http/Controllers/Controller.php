@@ -22,8 +22,8 @@
  */
 /**
  * @OA\Tag(
- *     name="version",
- *     description="Get app version"
+ *     name="main",
+ *     description="Main function unrelated to assessment"
  * )
  * @OA\Tag(
  *     name="soldier",

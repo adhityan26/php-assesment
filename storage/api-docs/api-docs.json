@@ -133,10 +133,24 @@
         "/": {
             "get": {
                 "tags": [
-                    "version"
+                    "main"
                 ],
                 "summary": "Version",
                 "description": "View this application version.",
+                "responses": {
+                    "default": {
+                        "description": "200"
+                    }
+                }
+            }
+        },
+        "/flush": {
+            "get": {
+                "tags": [
+                    "main"
+                ],
+                "summary": "Clear Cache",
+                "description": "Clear cache storage, hit this endpoint if some of the api can't be accessed",
                 "responses": {
                     "default": {
                         "description": "200"
@@ -449,8 +463,8 @@
     },
     "tags": [
         {
-            "name": "version",
-            "description": "Get app version"
+            "name": "main",
+            "description": "Main function unrelated to assessment"
         },
         {
             "name": "soldier",

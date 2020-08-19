@@ -11,9 +11,16 @@
 |
 */
 
+use Illuminate\Support\Facades\Cache;
+
 $router->get('/', function () use ($router) {
 //    phpinfo();
     return $router->app->version();
+});
+
+$router->get('/flush', function () use ($router) {
+//    phpinfo();
+    return Cache::flush();
 });
 
 $router->group(['prefix' => 'soldier', 'namespace' => 'Soldier'], function () use ($router) {
