@@ -26,8 +26,61 @@ Live running application deployed on heroku and can be found on https://php-asse
 
 ## Api Path
 
-* soldier
-* shop
-* game
-
 Detail of the endpoint is on the api documentation online https://php-assessment-ant.herokuapp.com/api/documentation.
+
+### soldier
+
+A soldier go to a war
+- Soldier bring magazine
+- Soldier put an ammo
+- Soldier test magazine
+- Soldier clear magazine
+
+### shop
+
+A shop with minus quantity problem
+- Mom can create new product
+- Mom can reduce a product qty
+- Mom can clear all the product
+
+### game
+
+Joni couldn't find his key
+- Joni find his key
+Andi give Joni instruction to his key location
+the output result will give the possibility of key location with 2 dimensional matrix and each it's position
+
+```
+{
+  "location": [
+    { "x": 3, "y": 4 },
+    { "x": 5, "y": 2 },
+    { "x": 5, "y": 3 },
+    { "x": 5, "y": 4 },
+    { "x": 6, "y": 2 }
+  ],
+  "mark": [
+    ["#", "#", "#", "#", "#", "#", "#", "#"],
+    ["#", ".", ".", ".", ".", ".", ".", "#"],
+    ["#", ".", "#", "#", "#", "O", "O", "#"],
+    ["#", ".", ".", ".", "#", "O", "#", "#"],
+    ["#", "X", "#", "O", ".", "O", ".", "#"],
+    ["#", "#", "#", "#", "#", "#", "#", "#"]
+  ]
+}
+```
+
+### tennis
+
+Rahman will playing tennis
+- Rahman bring ball container
+- Rahman put a ball into container
+- Rahman clear container
+
+## Unit Test
+
+To run unit test for Ball solution run
+
+```
+vendor/bin/phpunit
+```
