@@ -362,6 +362,89 @@
                     }
                 }
             }
+        },
+        "/tennis": {
+            "get": {
+                "tags": [
+                    "tennis"
+                ],
+                "summary": "Container",
+                "description": "Rahman view the container he is carrying.",
+                "operationId": "App\\Http\\Controllers\\Tennis\\ContainerController::index",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/tennis/initContainer": {
+            "post": {
+                "tags": [
+                    "tennis"
+                ],
+                "summary": "Container Initialization",
+                "description": "Initialize container that Rahman bring.",
+                "operationId": "App\\Http\\Controllers\\Tennis\\ContainerController::initContainer",
+                "requestBody": {
+                    "description": "initialize value for the container",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "containerNumber": {
+                                        "description": "Tennis carry the container into the war",
+                                        "type": "integer",
+                                        "example": 5
+                                    },
+                                    "containerSize": {
+                                        "description": "Tennis carry the container into the war",
+                                        "type": "integer",
+                                        "example": 10
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/tennis/putBall": {
+            "put": {
+                "tags": [
+                    "tennis"
+                ],
+                "summary": "Put Ball",
+                "description": "Rahman put a ball randomly into a container.",
+                "operationId": "App\\Http\\Controllers\\Tennis\\ContainerController::putBall",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/tennis/clearContainer": {
+            "delete": {
+                "tags": [
+                    "tennis"
+                ],
+                "summary": "Clear Container",
+                "description": "Rahman removing ball from all of the container.",
+                "operationId": "App\\Http\\Controllers\\Tennis\\ContainerController::clearContainer",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
         }
     },
     "tags": [

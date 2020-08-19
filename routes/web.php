@@ -24,6 +24,13 @@ $router->group(['prefix' => 'soldier', 'namespace' => 'Soldier'], function () us
     $router->delete('/clearMagazine', 'MagazineController@clearMagazine');
 });
 
+$router->group(['prefix' => 'tennis', 'namespace' => 'Tennis'], function () use ($router) {
+    $router->get('/', 'ContainerController@index');
+    $router->post('/initContainer', 'ContainerController@initContainer');
+    $router->put('/putBall', 'ContainerController@putBall');
+    $router->delete('/clearContainer', 'ContainerController@clearContainer');
+});
+
 $router->group(['prefix' => 'shop', 'namespace' => 'Shop'], function () use ($router) {
     $router->get('/', 'ProductController@index');
     $router->post('/addProduct', 'ProductController@addProduct');
