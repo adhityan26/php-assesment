@@ -21,7 +21,7 @@ class ProductRepository {
      * ProductRepository constructor.
      */
     function __construct() {
-        $this->products = Cache::get('products');
+        $this->products = Cache::get('products') ?? [];
     }
 
     /**
@@ -45,7 +45,7 @@ class ProductRepository {
      * @return bool|false|int|string
      */
     public function getProductIndexById(int $id) {
-        $this->products = Cache::get('products');
+        $this->products = Cache::get('products') ?? [];
         if ($this->products === null) {
             return false;
         }
